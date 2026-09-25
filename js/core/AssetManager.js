@@ -1,7 +1,4 @@
-import{GLTFLoader}from'three/addons/loaders/GLTFLoader.js';
 export class AssetManager{
-constructor(T){this.T=T;this.loader=new GLTFLoader();this.cache=new Map();this.remote={"assault-rifle":"Rifle_Assault_West.glb","heavy-rifle":"Rifle_Battle_West.glb","burst-rifle":"Rifle_Assault_West.glb","service-pistol":"Pistol_Compact_West.glb","heavy-pistol":"Pistol_Full_West.glb","burst-pistol":"Pistol_Compact_West.glb","compact-smg":"SMG_Compact_West.glb","fast-smg":"SMG_Full_West.glb","suppressed-smg":"SMG_Full_West.glb","pump-shotgun":"Shotgun_Pump_West.glb","auto-shotgun":"Shotgun_Auto_West.glb","bolt-sniper":"Sniper_Rifle_West.glb","semi-sniper":"Sniper_Rifle_West.glb","light-machine":"Rifle_Battle_West.glb"};this.base='https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/weapons/flat_guns_west/GLB/';}
-localURL(id){return new URL('assets/models/weapons/'+id+'.glb',document.baseURI).href}
-async loadWeapon(id){if(this.cache.has(id)){try{return(await this.cache.get(id)).clone(true)}catch{this.cache.delete(id)}}const p=this.fetchWeapon(id);this.cache.set(id,p);try{return(await p).clone(true)}catch(e){this.cache.delete(id);throw e}}
-async fetchWeapon(id){try{return(await this.loader.loadAsync(this.localURL(id))).scene}catch(localError){const file=this.remote[id];if(!file)throw localError;return(await this.loader.loadAsync(this.base+file)).scene}}
+constructor(){this.cache=new Map()}
+async loadWeapon(){return null}
 }
