@@ -1,0 +1,18 @@
+{
+  "weapons": {
+    "service-pistol": "./assets/models/weapons/service-pistol.obj",
+    "heavy-pistol": "./assets/models/weapons/heavy-pistol.obj",
+    "burst-pistol": "./assets/models/weapons/burst-pistol.obj",
+    "compact-smg": "./assets/models/weapons/compact-smg.obj",
+    "fast-smg": "./assets/models/weapons/fast-smg.obj",
+    "suppressed-smg": "./assets/models/weapons/suppressed-smg.obj",
+    "assault-rifle": "./assets/models/weapons/assault-rifle.obj",
+    "heavy-rifle": "./assets/models/weapons/heavy-rifle.obj",
+    "burst-rifle": "./assets/models/weapons/burst-rifle.obj",
+    "pump-shotgun": "./assets/models/weapons/pump-shotgun.obj",
+    "auto-shotgun": "./assets/models/weapons/auto-shotgun.obj",
+    "bolt-sniper": "./assets/models/weapons/bolt-sniper.obj",
+    "semi-sniper": "./assets/models/weapons/semi-sniper.obj",
+    "light-machine": "./assets/models/weapons/light-machine.obj"
+  }
+}
