@@ -9,16 +9,18 @@ Lightweight browser tactical FPS built from scratch with HTML, CSS, JavaScript a
 - Original tactical map geometry and collision
 - Weapon database with pistols, SMGs, rifles, shotguns, snipers, LMG and knife
 - Recoil, spread, headshots, armour, health, reloads and hit detection
-- Deathmatch, tactical round mode and practice range
+- Deathmatch, tactical 5v5-style round mode and practice range
+- Team-based bot AI with line-of-sight combat
+- Buy phase, persistent economy, weapon purchases and round rewards
+- Bomb carrier, plant sites, dropped bomb pickup, CT defuse and explosion win conditions
 - Moving and static practice targets
-- Buy phase and local loadout selection
 - Multi-category settings with automatic local persistence
 - Keyboard/mouse rebinding
 - Crosshair editor
 - Modern tactical menu and selectable Classic 1.6 visual theme
 - Local profile/stat persistence
 - Procedural Web Audio
-- Real GLB asset pipeline with local asset slots and CC0 fallback
+- Local first-person asset pipeline using an asset manifest and OBJ/Three JSON loaders, with procedural fallback models
 - GitHub Pages deployment workflow
 - Local favicon
 
@@ -30,9 +32,11 @@ The Classic 1.6 style changes the menu layout, typography, palette, HUD treatmen
 
 ## Assets
 
-Valve/CS2 game files are not redistributed. Drop your own licensed or original assets into the assets slots.
+Valve/CS2 game files are not redistributed. The repository contains no ripped CS2 assets.
 
-The project is compatible with CC0/public-domain sources such as Poly Haven and the CC0 FPS Asset Kit. See assets/README.md for the expected folders.
+The asset loader reads `assets/manifest.json`. Put your own original, licensed, or otherwise authorized exported models into the referenced paths (OBJ or Three.js Object JSON). The game automatically falls back to procedural weapons when an asset is missing.
+
+This keeps the project suitable for GitHub Pages while still making it possible to use authorized local weapon art. See `assets/README.md` for the expected folders.
 
 ## Run locally
 
@@ -52,4 +56,4 @@ The repository includes .github/workflows/pages.yml for GitHub Pages.
 
 ## Status
 
-This is the first offline foundation. Networking, deeper objective logic, full animation sets and a larger production asset library are separate follow-on phases.
+The offline core now has a real tactical round loop, team AI, economy and bomb objective. Online multiplayer, player animation, authoritative netcode, matchmaking and a production asset library are still separate phases.
