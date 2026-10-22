@@ -1,4 +1,50 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#080b0c"><title>CounterForce: The Range</title><link rel="icon" href="./favicon.svg" type="image/svg+xml"><meta name="description" content="Lightweight browser tactical FPS." data-cf-version="2026-09-25"><link rel="stylesheet" href="./css/style.css?v=4"></head><body><div id="app"><div id="game-root"></div>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#080b0c"><title>CounterForce: The Range</title><link rel="icon" href="./favicon.svg" type="image/svg+xml"><meta name="description" content="Lightweight browser tactical FPS." data-cf-version="2026-09-25"><link rel="stylesheet" href="./css/style.css?v=pixelforge-splash-1"></head><body><div id="app"><div id="game-root"></div>
+<section id="pixelforge-splash" class="pixelforge-splash" aria-label="PixelForge Studios loading CounterForce">
+  <div class="pf-splash-grid" aria-hidden="true"></div>
+  <div class="pf-splash-inner">
+    <header class="pf-splash-top">
+      <div class="pf-splash-brand">
+        <div class="pf-splash-emblem"><img src="https://crypticfn2012-jpg.github.io/PixelForgeSudios/assets/pixel.png" alt="" decoding="async" onerror="this.style.display='none'"><span>PF</span></div>
+        <div><div class="pf-splash-studio">PIXELFORGE <i>STUDIOS</i></div><div class="pf-splash-tagline">FORGING GAMES FROM SCRATCH</div></div>
+      </div>
+      <div class="pf-splash-edition">PIXELFORGE ORIGINAL<span>COUNTERFORCE // BUILD 01</span></div>
+    </header>
+    <main class="pf-splash-main">
+      <div class="pf-splash-reticle" aria-hidden="true"><span></span><i></i></div>
+      <div class="pf-splash-overline"><span></span>TACTICAL FPS / OFFLINE OPERATIONS</div>
+      <h1>COUNTER<span>FORCE</span></h1>
+      <div class="pf-splash-subtitle">THE RANGE</div>
+      <div class="pf-splash-caption">A PixelForge Studios original.<br>Loading the range. Preparing the operation.</div>
+    </main>
+    <footer class="pf-splash-bottom">
+      <div class="pf-splash-motto"><strong>PIXELFORGE STUDIOS</strong>BUILD IT. TEST IT. IMPROVE IT. SHIP IT.</div>
+      <div>
+        <div class="pf-splash-progress-head"><span id="pf-loader-status">INITIALISING SYSTEMS</span><span id="pf-loader-percent">03%</span></div>
+        <div class="pf-splash-track"><span id="pf-loader-progress"></span></div>
+        <div class="pf-splash-footnote">THREE.JS ENGINE / LOCAL OPERATIONS</div>
+      </div>
+    </footer>
+  </div>
+</section>
+<script>
+(function(){
+  const root=document.getElementById('pixelforge-splash');
+  const bar=document.getElementById('pf-loader-progress');
+  const percent=document.getElementById('pf-loader-percent');
+  const status=document.getElementById('pf-loader-status');
+  let progress=3,finished=false;
+  const stages=n=>n<18?'ALLOCATING RENDERER':n<40?'BUILDING RANGE':n<64?'PREPARING LOADOUT':n<88?'INITIALISING COMBAT SYSTEMS':'SYSTEMS ONLINE';
+  const paint=()=>{bar.style.width=Math.round(progress)+'%';percent.textContent=String(Math.round(progress)).padStart(2,'0')+'%';if(progress<100)status.textContent=stages(progress)};
+  const ticker=setInterval(()=>{if(progress<88){progress=Math.min(88,progress+.65+Math.random()*1.35);paint()}},100);
+  window.finishPixelForgeSplash=function(success){
+    if(finished)return;finished=true;clearInterval(ticker);
+    status.textContent=success?'SYSTEMS ONLINE':'BOOT INTERRUPTED';
+    progress=100;paint();
+    root.classList.add('splash-complete');
+    setTimeout(()=>{root.classList.add('splash-hidden');setTimeout(()=>root.remove(),700)},success?500:180);
+  };
+})();
+</script>
 <section id="menu-screen" class="screen active"><div class="menu-backdrop"></div><div class="menu-shell modern-menu"><div class="top-nav"><button data-menu="profile">PROFILE</button><button data-menu="loadout">LOADOUT</button><button data-menu="play">PLAY</button><button data-menu="settings">SETTINGS</button><span class="nav-spacer"></span><span class="build-tag">COUNTERFORCE // THE RANGE</span></div><div class="menu-hero"><div class="brand"><div class="brand-kicker">RON PRESENTS · TACTICAL FPS</div><h1>COUNTER<span>FORCE</span></h1><p>THE RANGE</p></div><div class="menu-feature"><span>OFFLINE OPERATIONS</span><b>DEATHMATCH</b><small>8 AI opponents · live combat range</small></div></div><div class="menu-buttons"><button data-menu="play">PLAY</button><button data-menu="loadout">LOADOUT</button><button data-menu="practice">PRACTICE</button><button data-menu="settings">SETTINGS</button></div><div class="menu-footer"><span>DESKTOP · POINTER LOCK</span><span>V1.0 RANGE BUILD // FINAL</span></div></div><div class="menu-agent"><div class="agent-shadow"></div><div class="agent-body"><div class="agent-head"></div><div class="agent-torso"></div><div class="agent-rifle"></div></div></div></section>
 <section id="mode-screen" class="screen panel-screen"><div class="panel-card"><div class="panel-heading"><span class="eyebrow">SELECT OPERATION</span><h2>GAME MODE</h2></div><div class="mode-grid"><button class="mode-option" data-mode="deathmatch"><b>DEATHMATCH</b><span>8 bots · respawn · 10 minute match</span></button><button class="mode-option" data-mode="tactical"><b>TACTICAL</b><span>5v5 · buy phase · round based</span></button><button class="mode-option" data-mode="practice"><b>PRACTICE</b><span>targets · aim drill · unlimited range</span></button></div><button class="text-button" data-back="menu">BACK</button></div></section>
 <section id="loadout-screen" class="screen panel-screen"><div class="panel-card wide"><div class="panel-heading"><span class="eyebrow">ARMORY</span><h2>LOADOUT</h2></div><div id="loadout-grid" class="loadout-grid"></div><button class="text-button" data-back="menu">BACK</button></div></section>
@@ -17,4 +63,4 @@
 <section id="buy-screen" class="screen panel-screen"><div class="panel-card buy-card"><div class="panel-heading"><span class="eyebrow">PRE-ROUND</span><h2>BUY PHASE</h2></div><div class="buy-top"><span id="buy-money">$800</span><span id="buy-timer">12</span></div><div id="buy-grid" class="buy-grid"></div><button id="buy-done" class="accent-button">READY</button></div></section>
 <section id="death-screen" class="screen death-screen"><div class="death-label">YOU ARE DOWN</div><div id="death-message">Respawning...</div></section>
 <section id="hud" class="hud hidden"><div class="hud-top"><div class="score-box"><span id="team-a-score">0</span><span class="score-divider">:</span><span id="team-b-score">0</span></div><div class="round-info"><span id="round-label">DEATHMATCH</span><span id="round-timer">10:00</span><span id="objective-hud"></span></div><div class="hud-money" id="money-value">$800</div><div id="ping-box">PING <span id="ping-value">18</span></div></div><div id="kill-feed" class="kill-feed"></div><div id="center-message" class="center-message"></div><div id="crosshair" class="crosshair"><i></i><i></i><i></i><i></i><b></b></div><div id="damage-indicator" class="damage-indicator"></div><div class="hud-bottom"><div class="health-panel"><div class="health-bar"><span id="health-fill"></span></div><b id="health-value">100</b><small>HEALTH</small></div><div class="ammo-panel"><span id="ammo-current">30</span><span class="ammo-slash">/</span><span id="ammo-reserve">90</span><small id="weapon-label">ASSAULT RIFLE</small></div></div><div id="scoreboard" class="scoreboard hidden"><div class="scoreboard-card"><div class="scoreboard-header"><b>COUNTERFORCE</b><span>K</span><span>D</span><span>SCORE</span><span>PING</span></div><div id="scoreboard-rows"></div></div></div><div class="help-card"><b>WASD</b> move · <b>SHIFT</b> sprint · <b>C</b> crouch · <b>SPACE</b> jump · <b>R</b> reload · <b>1/2/3</b> weapon · <b>TAB</b> scoreboard · <b>ESC</b> pause</div></section>
-</div><script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script><script>window.addEventListener("error",function(e){var r=document.getElementById("menu-screen");if(r&&(!window.THREE||e.message)){r.classList.add("active");var box=document.getElementById("boot-error");if(!box){box=document.createElement("div");box.id="boot-error";box.style.cssText="position:fixed;inset:20px;z-index:9999;background:#090d0c;color:#eef3ef;padding:24px;font:14px monospace;overflow:auto";r.appendChild(box)}box.textContent="COUNTERFORCE BOOT ERROR\n\n"+(e.message||"Unknown error")+"\n"+(e.filename||"")+"\nLINE "+(e.lineno||"")+" COL "+(e.colno||"")}});window.addEventListener("unhandledrejection",function(e){var r=document.getElementById("menu-screen");if(r){var box=document.getElementById("boot-error")||document.createElement("div");box.id="boot-error";box.style.cssText="position:fixed;inset:20px;z-index:9999;background:#090d0c;color:#eef3ef;padding:24px;font:14px monospace;overflow:auto";box.textContent="COUNTERFORCE PROMISE ERROR\n\n"+String(e.reason&&e.reason.stack||e.reason||"Unknown error");if(!box.parentNode)r.appendChild(box)}});</script><script src="./game.js?v=three-global-fix-2"></script></body></html>
+</div><script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script><script>window.addEventListener("error",function(e){var r=document.getElementById("menu-screen");if(r&&(!window.THREE||e.message)){r.classList.add("active");var box=document.getElementById("boot-error");if(!box){box=document.createElement("div");box.id="boot-error";box.style.cssText="position:fixed;inset:20px;z-index:9999;background:#090d0c;color:#eef3ef;padding:24px;font:14px monospace;overflow:auto";r.appendChild(box)}box.textContent="COUNTERFORCE BOOT ERROR\n\n"+(e.message||"Unknown error")+"\n"+(e.filename||"")+"\nLINE "+(e.lineno||"")+" COL "+(e.colno||"")}});window.addEventListener("unhandledrejection",function(e){var r=document.getElementById("menu-screen");if(r){var box=document.getElementById("boot-error")||document.createElement("div");box.id="boot-error";box.style.cssText="position:fixed;inset:20px;z-index:9999;background:#090d0c;color:#eef3ef;padding:24px;font:14px monospace;overflow:auto";box.textContent="COUNTERFORCE PROMISE ERROR\n\n"+String(e.reason&&e.reason.stack||e.reason||"Unknown error");if(!box.parentNode)r.appendChild(box)}});</script><script src="./game.js?v=pixelforge-splash-1"></script></body></html>
