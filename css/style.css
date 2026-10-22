@@ -2,3 +2,45 @@
 .startup-error{min-height:100vh;display:grid;place-content:center;gap:10px;padding:32px;background:#0a0e0d;color:#eef3ef;font-family:Rajdhani,Arial,sans-serif}.startup-error h2{margin:0;font-size:32px;letter-spacing:.08em}.startup-error p{margin:0;color:#c7ffd5}.startup-error small{color:#78847d}.startup-error button{width:max-content;margin-top:8px;padding:9px 14px;border:1px solid #435149;background:#121918;color:#eef3ef;font:700 12px Rajdhani;letter-spacing:.1em}.startup-error button:hover{border-color:#7fe59c}
 
 .hud-top .hud-money{justify-self:center;align-self:start;color:var(--accent);font:800 15px Rajdhani;letter-spacing:.08em;background:rgba(0,0,0,.24);padding:6px 10px}.round-info #objective-hud{display:block;min-height:12px;color:var(--accent);font:700 10px Rajdhani;letter-spacing:.08em;margin-top:2px;text-transform:uppercase}.buy-item:disabled{cursor:not-allowed;filter:saturate(.5)}
+
+/* PixelForge Studios boot splash */
+.pixelforge-splash{position:fixed;inset:0;z-index:10000;display:flex;align-items:stretch;justify-content:center;overflow:hidden;background:#070a0d;color:#eef4f1;opacity:1;visibility:visible;transition:opacity .62s ease,visibility .62s ease;font-family:Outfit,Arial,sans-serif}
+.pixelforge-splash:before{content:"";position:absolute;inset:-20%;background:radial-gradient(ellipse at 78% 45%,rgba(62,226,151,.12),transparent 30%),radial-gradient(ellipse at 15% 88%,rgba(46,115,255,.09),transparent 26%),linear-gradient(115deg,transparent 0 64%,rgba(255,255,255,.025) 64.1%,transparent 64.4%);pointer-events:none}
+.pixelforge-splash:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0 3px,rgba(255,255,255,.018) 4px);mix-blend-mode:screen;pointer-events:none}
+.pixelforge-splash.splash-hidden{opacity:0;visibility:hidden;pointer-events:none}
+.pf-splash-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(150,180,170,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(150,180,170,.055) 1px,transparent 1px);background-size:52px 52px;mask-image:linear-gradient(90deg,transparent,#000 15%,#000 86%,transparent);opacity:.44}
+.pf-splash-inner{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:space-between;width:min(1120px,88vw);min-height:100vh;padding:clamp(22px,4vw,54px) 0}
+.pf-splash-top{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.pf-splash-brand{display:flex;align-items:center;gap:14px}
+.pf-splash-emblem{position:relative;width:54px;height:54px;flex:0 0 54px;display:grid;place-items:center;border:1px solid rgba(130,239,176,.58);background:linear-gradient(135deg,rgba(105,230,153,.15),rgba(10,18,17,.75));box-shadow:0 0 34px rgba(101,235,152,.08),inset 0 0 0 4px rgba(255,255,255,.025);clip-path:polygon(0 0,74% 0,100% 26%,100% 100%,26% 100%,0 74%)}
+.pf-splash-emblem img{width:100%;height:100%;object-fit:contain;padding:4px;position:absolute;inset:0;filter:drop-shadow(0 2px 8px #0008)}
+.pf-splash-emblem img:not([src]){display:none}
+.pf-splash-emblem span{font:800 20px Rajdhani,Arial,sans-serif;letter-spacing:-.08em;color:#c9ffdc;text-shadow:0 0 16px rgba(116,255,172,.25)}
+.pf-splash-studio{font:800 16px Rajdhani,Arial,sans-serif;letter-spacing:.15em;color:#f2f6f4}
+.pf-splash-studio i{font-style:normal;color:#7fe59c}
+.pf-splash-tagline{margin-top:4px;font:600 9px Rajdhani,Arial,sans-serif;letter-spacing:.19em;color:#687870}
+.pf-splash-edition{text-align:right;font:600 10px Rajdhani,Arial,sans-serif;letter-spacing:.15em;color:#66756d}
+.pf-splash-edition span{display:block;margin-top:7px;color:#a9b6ae}
+.pf-splash-main{position:relative;margin:auto 0;padding:8vh 0 9vh;max-width:680px}
+.pf-splash-overline{display:flex;align-items:center;gap:10px;color:#84948b;font:700 11px Rajdhani,Arial,sans-serif;letter-spacing:.2em}
+.pf-splash-overline span{display:inline-block;width:22px;height:2px;background:#7fe59c;box-shadow:0 0 12px #7fe59c}
+.pf-splash-main h1{position:relative;margin:20px 0 2px;font:800 clamp(58px,10vw,112px)/.79 Rajdhani,Arial,sans-serif;letter-spacing:-.035em;color:#f1f6f2;text-shadow:0 8px 42px rgba(0,0,0,.3)}
+.pf-splash-main h1 span{color:#7fe59c}
+.pf-splash-subtitle{margin-top:15px;color:#9ba9a1;font:700 15px Rajdhani,Arial,sans-serif;letter-spacing:.46em}
+.pf-splash-caption{margin-top:26px;color:#64736b;font:500 12px/1.7 Outfit,Arial,sans-serif;letter-spacing:.04em}
+.pf-splash-reticle{position:absolute;right:-390px;top:50%;width:min(40vw,390px);aspect-ratio:1;transform:translateY(-48%);border:1px solid rgba(127,229,156,.19);border-radius:50%;opacity:.8;box-shadow:0 0 90px rgba(127,229,156,.06),inset 0 0 70px rgba(127,229,156,.04)}
+.pf-splash-reticle:before,.pf-splash-reticle:after,.pf-splash-reticle span{content:"";position:absolute;border:1px solid rgba(127,229,156,.13);border-radius:50%;inset:12%}
+.pf-splash-reticle:after{inset:27%;border-color:rgba(127,229,156,.24)}
+.pf-splash-reticle span{inset:48%;background:#7fe59c;border:0;box-shadow:0 0 18px rgba(127,229,156,.55)}
+.pf-splash-reticle i{position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(transparent,rgba(127,229,156,.14) 22%,rgba(127,229,156,.18) 50%,transparent);transform:translateX(-50%)}
+.pf-splash-bottom{display:grid;grid-template-columns:1fr minmax(230px,390px);align-items:end;gap:24px}
+.pf-splash-motto{color:#56655d;font:700 10px Rajdhani,Arial,sans-serif;letter-spacing:.16em}
+.pf-splash-motto strong{display:block;margin-bottom:7px;color:#85958b;font-size:11px;font-weight:700}
+.pf-splash-progress-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:9px;font:700 10px Rajdhani,Arial,sans-serif;letter-spacing:.14em}
+#pf-loader-status{color:#92a298}
+#pf-loader-percent{color:#7fe59c;font-variant-numeric:tabular-nums}
+.pf-splash-track{height:3px;overflow:hidden;background:#1b2621;border:1px solid rgba(255,255,255,.035)}
+.pf-splash-track span{display:block;width:3%;height:100%;background:linear-gradient(90deg,#43bb79,#b8ffd0);box-shadow:0 0 16px rgba(127,229,156,.42);transition:width .14s linear}
+.pf-splash-footnote{margin-top:8px;text-align:right;color:#425048;font:600 9px Rajdhani,Arial,sans-serif;letter-spacing:.13em}
+@media(max-width:640px){.pf-splash-inner{width:88vw;padding:22px 0}.pf-splash-edition{font-size:8px}.pf-splash-emblem{width:44px;height:44px;flex-basis:44px}.pf-splash-studio{font-size:13px}.pf-splash-tagline{font-size:7px;letter-spacing:.12em}.pf-splash-main{padding:10vh 0}.pf-splash-main h1{font-size:clamp(49px,13vw,76px)}.pf-splash-reticle{right:-35vw;width:70vw;opacity:.32}.pf-splash-bottom{grid-template-columns:1fr;gap:24px}.pf-splash-motto{display:none}.pf-splash-progress-head{font-size:9px}.pf-splash-caption{max-width:85%;font-size:11px}}
+@media(prefers-reduced-motion:reduce){.pixelforge-splash,.pf-splash-track span{transition:none}}
