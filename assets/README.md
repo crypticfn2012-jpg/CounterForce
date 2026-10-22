@@ -1,15 +1,28 @@
-# CounterForce asset slots
+# CounterForce asset slots and licenses
 
-The game is wired for real local GLB/GLTF art without locking the project to proprietary Valve/CS2 files.
+## Included weapon models
 
-Recommended layout:
+The first-person weapon geometry in this repository comes from the **FPS Asset Kit** by petroulacl:
+https://github.com/petroulacl/fps-asset-kit
 
-- assets/backgrounds/modern.webp — modern tactical menu background
-- assets/backgrounds/classic16.webp — classic 1.6-inspired menu background
-- assets/models/weapons/*.glb — first-person weapon models
-- assets/models/characters/*.glb — bot/operator models
-- assets/audio/*.wav or .ogg — original or CC0 SFX/music
+Its README declares the pack's weapon models CC0/public-domain, allows redistribution and commercial use, and identifies the models as coming from OpenGameArt's Flat Guns East/West packs. CounterForce contains OBJ geometry exports from that pack. The current lightweight OBJ loader applies CounterForce's weapon colours and does not load the original MTL material files.
 
-For legally reusable public-domain content, Poly Haven publishes CC0 models/textures, and the CC0 FPS Asset Kit provides GLB weapons, PBR textures and SFX. The project can use those as a base and keep the exact Valve/CS2 files out of the repository.
+These are generic licensed firearm models, **not official Counter-Strike models**.
 
-Do not add ripped CS2/CS:GO game files to this repository.
+## Official Counter-Strike sources
+
+Valve's official CS2 Workshop Resources page provides weapon-model geometry and workshop resources:
+https://www.counter-strike.net/workshop/workshopresources
+
+That page is useful for authorized Workshop work and reference. Do not copy extracted CS2/CS:GO game assets into this public web repository unless you have the rights or permission to redistribute them. Valve's Steam Subscriber Agreement limits copying and distribution of its content:
+https://store.steampowered.com/subscriber_agreement/
+
+## Asset layout
+
+- `assets/backgrounds/modern.svg` — modern tactical menu background
+- `assets/backgrounds/classic16.svg` — classic 1.6-inspired menu background
+- `assets/models/weapons/*.obj` — CC0 weapon geometry
+- `assets/models/characters/*.glb` — optional licensed operator models
+- `assets/audio/*.wav` or `.ogg` — original or CC0 SFX/music
+
+The manifest maps weapon IDs to files in `assets/manifest.json`. The game retains procedural fallback weapons if an asset fails to load.
