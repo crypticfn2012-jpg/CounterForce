@@ -61,7 +61,7 @@ body.duel-active #kill-feed{top:145px}body.duel-active .help-card{display:none}b
 /* CounterForce combat feedback pass */
 #crosshair{transition:transform 45ms ease-out}
 body.cf-muzzle-fire #crosshair{transform:translate(-50%,-50%) scale(1.34);filter:drop-shadow(0 0 5px rgba(255,190,76,.95))}
-body.cf-muzzle-fire #game-view::after{content:"";position:fixed;z-index:18;left:50%;top:50%;width:94px;height:94px;pointer-events:none;transform:translate(-50%,-52%);background:radial-gradient(circle,rgba(255,250,211,.95) 0 5%,rgba(255,178,48,.82) 12%,rgba(255,95,20,.38) 29%,transparent 69%);clip-path:polygon(50% 0,60% 34%,91% 12%,70% 45%,100% 50%,69% 58%,88% 88%,58% 69%,50% 100%,42% 68%,12% 88%,31% 57%,0 50%,32% 43%,12% 12%,42% 33%);animation:cf-muzzle-pop 65ms steps(2,end) forwards}
+body.cf-muzzle-fire::after{content:"";position:fixed;z-index:999;left:50%;top:50%;width:94px;height:94px;pointer-events:none;transform:translate(-50%,-52%);background:radial-gradient(circle,rgba(255,250,211,.95) 0 5%,rgba(255,178,48,.82) 12%,rgba(255,95,20,.38) 29%,transparent 69%);clip-path:polygon(50% 0,60% 34%,91% 12%,70% 45%,100% 50%,69% 58%,88% 88%,58% 69%,50% 100%,42% 68%,12% 88%,31% 57%,0 50%,32% 43%,12% 12%,42% 33%);animation:cf-muzzle-pop 65ms steps(2,end) forwards}
 @keyframes cf-muzzle-pop{0%{opacity:1;transform:translate(-50%,-52%) scale(.7)}100%{opacity:0;transform:translate(-50%,-52%) scale(1.2)}}
-body.cf-muzzle-fire #game-view{filter:brightness(1.07)}
+body.cf-muzzle-fire #game-root{filter:brightness(1.07)}
 #game-view{cursor:crosshair}
