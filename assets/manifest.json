@@ -1,18 +1,18 @@
 {
   "weapons": {
-    "service-pistol": "./assets/models/weapons/service-pistol.obj",
-    "heavy-pistol": "./assets/models/weapons/heavy-pistol.obj",
-    "burst-pistol": "./assets/models/weapons/burst-pistol.obj",
-    "compact-smg": "./assets/models/weapons/compact-smg.obj",
-    "fast-smg": "./assets/models/weapons/fast-smg.obj",
-    "suppressed-smg": "./assets/models/weapons/suppressed-smg.obj",
-    "assault-rifle": "./assets/models/weapons/assault-rifle.obj",
-    "heavy-rifle": "./assets/models/weapons/heavy-rifle.obj",
-    "burst-rifle": "./assets/models/weapons/burst-rifle.obj",
-    "pump-shotgun": "./assets/models/weapons/pump-shotgun.obj",
-    "auto-shotgun": "./assets/models/weapons/auto-shotgun.obj",
-    "bolt-sniper": "./assets/models/weapons/bolt-sniper.obj",
-    "semi-sniper": "./assets/models/weapons/semi-sniper.obj",
-    "light-machine": "./assets/models/weapons/light-machine.obj"
+    "service-pistol": "./assets/models/weapons/pistol-full.obj",
+    "heavy-pistol": "./assets/models/weapons/pistol-compact.obj",
+    "burst-pistol": "./assets/models/weapons/pistol-compact.obj",
+    "compact-smg": "./assets/models/weapons/smg-compact.obj",
+    "fast-smg": "./assets/models/weapons/smg-full.obj",
+    "suppressed-smg": "./assets/models/weapons/smg-compact.obj",
+    "assault-rifle": "./assets/models/weapons/rifle-assault-west.obj",
+    "heavy-rifle": "./assets/models/weapons/rifle-battle-east.obj",
+    "burst-rifle": "./assets/models/weapons/rifle-assault-east.obj",
+    "pump-shotgun": "./assets/models/weapons/shotgun-pump.obj",
+    "auto-shotgun": "./assets/models/weapons/shotgun-auto.obj",
+    "bolt-sniper": "./assets/models/weapons/sniper-rifle.obj",
+    "semi-sniper": "./assets/models/weapons/sniper-rifle.obj",
+    "light-machine": "./assets/models/weapons/rifle-battle-east.obj"
   }
 }
