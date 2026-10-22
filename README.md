@@ -9,6 +9,7 @@ Lightweight browser tactical FPS built from scratch with HTML, CSS, JavaScript a
 - Original tactical map geometry and collision
 - Weapon database with pistols, SMGs, rifles, shotguns, snipers, LMG and knife
 - Recoil, spread, headshots, armour, health, reloads and hit detection
+- Dedicated 1v1 duel mode: one AI opponent, first-to-10 rounds, round resets, bot difficulty selection and match results
 - Deathmatch, tactical 5v5-style round mode and practice range
 - Team-based bot AI with line-of-sight combat
 - Buy phase, persistent economy, weapon purchases and round rewards
@@ -17,6 +18,8 @@ Lightweight browser tactical FPS built from scratch with HTML, CSS, JavaScript a
 - Multi-category settings with automatic local persistence
 - Keyboard/mouse rebinding
 - Crosshair editor
+- Redesigned tactical menu with Dustline minimap, bot difficulty controls and career stats
+- Dedicated duel HUD with health/armour, round score, kill/death tracking and reload progress
 - Modern tactical menu and selectable Classic 1.6 visual theme
 - Local profile/stat persistence
 - Procedural Web Audio
