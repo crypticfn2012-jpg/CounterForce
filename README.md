@@ -32,11 +32,7 @@ The Classic 1.6 style changes the menu layout, typography, palette, HUD treatmen
 
 ## Assets
 
-Valve/CS2 game files are not redistributed. The repository contains no ripped CS2 assets.
-
-The asset loader reads `assets/manifest.json`. Put your own original, licensed, or otherwise authorized exported models into the referenced paths (OBJ or Three.js Object JSON). The game automatically falls back to procedural weapons when an asset is missing.
-
-This keeps the project suitable for GitHub Pages while still making it possible to use authorized local weapon art. See `assets/README.md` for the expected folders.
+Valve/CS2 game files are not redistributed. The weapon meshes included here are generic CC0/public-domain models, not official Counter-Strike assets. The asset loader reads `assets/manifest.json`, and the game falls back to procedural weapons if a model cannot load. See `assets/README.md` for source and licensing notes.
 
 ## Run locally
 
